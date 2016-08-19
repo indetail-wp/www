@@ -1,0 +1,57 @@
+.newsticker{
+	width: 100%;
+	// overflow: hidden;
+	height: 50px;
+	padding: 0 20px;
+	border-bottom: solid 1px $greyish-light;
+	.slick-list{
+		overflow: hidden;
+		height: inherit !important;
+	}
+	div {
+		display: block;
+		width: 100%;
+		text-align: center;
+		margin: 0 auto;
+		white-space:nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		line-height: 50px;
+	}
+
+	&:after{
+		@include pseudo-elements-display();
+		content:'news';
+		left: 20px;
+		top: 10px;
+		top: -15px;
+		// height:50px;
+		line-height: 30px;
+		width: 30px;
+		color: #fff;
+		background: $color;
+		border-radius: 50%;
+		font-size: 10px;
+		text-align: center;
+
+	}
+}
+// HTML
+// <div class="newsticker">
+// 	<div>2015.10.19　EZOCARNIVAL（エゾカーニバル）開催！</div>
+// 	<div>2015.10.19　NEW!　EZOCA提携店【ルイール　～Wellness Beauty Salon～】</div>
+// 	<div>2015.10.19　AsMama活動説明＆交流会開催のお知らせ</div>
+// 	<div>2015.10.19　NEW!　EZOCA提携店【パーティドレスレンタル Ronastyle(ロナスタイル)】</div>
+// 	<div>2015.10.19　NEW!　EZOCA提携店【天ぷら倶楽部】</div>
+// 	<div>2015.10.19　【EZOCLUBマガジンvol６　掲載内容について】</div>
+// </div>
+
+// JS
+// $('.newsticker').slick({
+// 	autoplay: true,
+// 	autoplaySpeed: 2000,
+// 	speed: 700,
+// 	cssEase: 'cubic-bezier(.1, 0, 0, 1)',
+// 	vertical: true,
+// 	verticalSwiping: true
+// });

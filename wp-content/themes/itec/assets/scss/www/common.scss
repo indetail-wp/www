@@ -1,0 +1,44 @@
+@import "compass";
+
+@import 'settings/media';
+@import 'mixins';
+@import "animation";
+
+
+$mq-all: true;
+$mq-pc: false;
+$old-ie: false;
+$mq-tb: false;
+$mq-sp: false;
+$mq-large: false;
+@import 'all';
+
+
+
+
+@media screen and (min-width: $default-mq-pc-min-width),print {
+/* ==========================================================================
+   PC
+   ========================================================================== */
+$mq-all: false;
+$mq-pc: true;
+$old-ie: false;
+$mq-tb: false;
+$mq-sp: false;
+$mq-large: false;
+@import 'all';
+}
+
+
+@media screen and (max-width: $default-mq-sp-max-width) {
+/* ==========================================================================
+   SP
+   ========================================================================== */
+$mq-all: false;
+$mq-pc: false;
+$old-ie: false;
+$mq-tb: false;
+$mq-sp: true;
+$mq-large: false;
+@import 'all';
+}

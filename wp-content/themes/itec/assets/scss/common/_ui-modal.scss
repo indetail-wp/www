@@ -1,0 +1,61 @@
+
+
+.modal {
+  &.fade .modal-dialog {
+    transform: translate(0, 20px) scale(.95);
+    transition: transform .4s $ease;
+  }
+  &.in .modal-dialog {
+    transform: translate(0, 0) scale(1);
+  }
+  .modal-dialog {
+    max-width: 600px;
+    width: 90vw;
+    margin: 10vh auto;
+  }
+
+  // &.news .btn{
+  //   color: $color;
+  //   background: transparent;
+  //   border: solid 1px $color;
+  //   line-height: ( $base-size * 1.5 ) - 2px;
+  // }
+}
+
+.modal-content{
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.modal-backdrop {
+  background: $color-navy;
+  &.in { opacity: .8; }
+}
+
+.modal-header,
+.modal-body,
+.modal-footer{
+  padding: $base-size;
+}
+
+.modal-header{
+  font-size: 16px;
+}
+.modal-body{
+  font-size: 13px;
+  margin-bottom: 0;
+  img{
+    max-width: 100%;
+  }
+}
+
+// .modal-title{
+//   font-size: 1rem;
+//   font-weight: bold;
+// }
+
+.modal-footer{
+  text-align: center;
+  // background: $greyish-lightness;
+  // padding: $base-size*0.75 $base-size;
+}

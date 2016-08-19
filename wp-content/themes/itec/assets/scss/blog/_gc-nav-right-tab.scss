@@ -1,0 +1,54 @@
+.nav-right-tab {
+  height: $header-height;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  text-align: center;
+  z-index: 20000;
+  background: #fff;
+
+  li {
+    display: table-cell;
+    vertical-align: middle;
+    border-bottom: $border;
+    color: $greyish-dark;
+    font-size: 10px;
+    height: $header-height;
+
+    .title{
+      font-size: 1rem;
+    }
+
+		&#nav-right-close {
+			color: #fff;
+      cursor: pointer;
+			position: relative;
+
+			&:after,
+			&:before {
+        @include pseudo-elements-display();
+				background-color: $color;
+				height: 1px;
+				width: 1rem;
+				top: ($header-height / 2) - 6px;
+				left: $base-size - 2px;
+
+				@media (max-width: 480px) {
+					left: 10px;
+				}
+			}
+
+			&:after {
+				transform: rotate(45deg);
+				top: ($header-height / 2) + 5px;
+			}
+
+			&:before {
+				transform: rotate(-45deg);
+			}
+		}
+  }
+}

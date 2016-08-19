@@ -1,0 +1,331 @@
+// インプットフィールド
+// input {
+//   &[type=number] {
+//     &::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
+//       -webkit-appearance: none;
+//       -moz-appearance: none;
+//       margin: 0;
+//     }
+//   }
+//   &[type=date] {
+//     &::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
+//       -webkit-appearance: none;
+//       -moz-appearance: none;
+//       margin: 0;
+//     }
+//   }
+//   &[type=time] {
+//     &::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
+//       -webkit-appearance: none;
+//       -moz-appearance: none;
+//       margin: 0;
+//     }
+//   }
+// }
+
+.form-control {
+  background: $greyish-lightness;
+  border-radius: 0;
+  border: solid 2px $greyish-lighter;
+  font-size: 14px;
+  line-height: $base-size;
+  padding: $base-size / 4 - 2px $base-size / 2;
+  appearance: none;
+  transition: border-color .4s $ease;
+
+  &:disabled, &[readonly]{
+    background: $greyish-lightness;
+  }
+
+  &:focus {
+    border-color: $color;
+  }
+  // プレースホルダー
+  &::-webkit-input-placeholder{color:$greyish; opacity:0.7;}
+  &::-moz-placeholder{color:$greyish; opacity:0.7;}
+  &:-ms-input-placeholder{color:$greyish; opacity:0.7;}
+  &::placeholder{color:$greyish; opacity:0.7;}
+}
+
+textarea.form-control{
+  height: $base-size * 10 - 2px;
+  line-height: $base-size;
+  padding: $base-size / 2;
+}
+
+
+.input-group-addon{
+  padding: 0 10px;
+  border: 2px solid $greyish-light;
+  &.add-on-btn {
+    background: $color;
+    color: white;
+    border: 0;
+    cursor: pointer;
+    padding: 0 10px;
+    border-radius: 0;
+
+    [class*=" icon-"]:before, [class^=icon-]:before{
+      vertical-align: -.25em;
+    }
+
+    // [class*=" icon-"]:before, [class^=icon-]:before{
+    //   margin: 0;
+    // }
+  }
+}
+
+
+.form-control.small {
+	display: inline-block;
+	width: 150px;
+	text-align: right;
+}
+
+.feature-img {
+	height: 100px;
+}
+
+.form.image {
+	padding: 10px;
+}
+
+
+
+.dz-clickable {
+	position: relative;
+  height: 120px;
+	width: 100%;
+	padding: 10px;
+  border: 2px dashed $greyish-light;
+  overflow: hidden;
+	// background: #FFF;
+	// background-image: url(/img/image_drag.png);
+	// background-repeat: no-repeat;
+	// background-position: center center;
+	// box-shadow: $shadow;
+
+  &:hover{
+    border-color: $color;
+  }
+  // &:before{
+  //   @include pseudo-elements-display;
+  //   left: 0;
+  //   right: 0;
+  //   top: 0;
+  //   bottom: 0;
+  //   color: $greyish;
+  //   font-size: 14px;
+  //   text-align: center;
+  //   line-height: 120px;
+  //   font-family: 'icons';
+  //   @extend .icon-photos:before;
+  // }
+
+  &:after, &:before{
+    @include pseudo-elements-display;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    color: $greyish;
+    font-size: 12px;
+    text-align: center;
+    line-height: 120px;
+    z-index: 9;
+  }
+
+  &:before{
+    content: 'ファイルをドラッグまたはクリックして画像を追加してください';
+    z-index: 0;
+  }
+
+  &.dz-started{
+    background: $greyish-lightness;
+  }
+
+  &.dz-started:after, &.dz-started:before{
+    display: none;
+  }
+  .abs {
+  	position: absolute;
+  	left: 0px;
+  	top: 0px
+  }
+
+  .abs img {
+  	height: 120px;
+  	padding: 12px;
+  }
+
+  .delete-btn,  .trim-btn{
+  	display: block;
+  	color: white;
+  	background: rgba($greyish-darkness, 0.5);
+  	width: 29px;
+  	height: 29px;
+    padding: 2px;
+  	top: 0;
+  	left: 0;
+  	position: absolute;
+  	text-align: center;
+  }
+
+  .trim-btn {
+  	right:0;
+    left: auto;
+    display: none;
+  }
+  /* ソートエリア */
+  .gridly {
+  	position: relative;
+  	width: 100%;
+  }
+  /* ドラッグ移動エリア */
+  .brick.small {
+  	height: 96px;
+  	box-shadow: $shadow;
+  	cursor: move;
+    z-index: 100;
+  }
+  /* 記事画像 */
+  .brick img {
+  	height: 96px;
+  	-webkit-animation: showImg 0.3s linear 1;
+  }
+  /* ドラッグ中 */
+  .brick.dragging {
+  	opacity: 0.8;
+  }
+
+}
+
+/* トリミング ------------------------------------------- */
+/*モーダル*/
+.trim-stage {
+	position: fixed;
+	top: 0;
+	left: 240px;
+	right: 0;
+	bottom: 0;
+	height: 100%;
+	background-color: rgba(0,0,0,0.8);
+	z-index: 1050;
+	display: none;
+  overflow-y: auto;
+}
+/*切り取り枠*/
+.trim-area {
+	cursor: move;
+	width: 400px;
+	height: 400px;
+	border: 0px solid red;
+	background-color: rgba(255,255,255,0.5);
+	background-repeat: no-repeat;
+	z-index: 100;
+	position: absolute;
+}
+/*メインスクロールロック*/
+.main.noscroll {
+  position: fixed;
+  overflow-y: scroll;
+}
+/*メニューバー調整*/
+.vartical-nav {
+	z-index: 0;
+}
+/*オリジナル画像エリア*/
+.org-image {
+	padding: 48px;
+	text-align: center;
+}
+/*オリジナル画像に被せる黒マスク*/
+.mask {
+	background-color: rgba(0,0,0,0.5);
+	/*display: none;*/
+	z-index: 99;
+	position: absolute;
+}
+/*ドラッグする所*/
+.marker {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	background-image: url(/img/drag-marker.png);
+	background-repeat: no-repeat;
+	width: 21px;
+	height: 21px;
+}
+/*説明文*/
+.ope-info {
+	margin: 20px auto;
+	padding: 10px;
+	width: 600px;
+	color:white;
+	display: block;
+}
+/*ボタン*/
+.btn-area {
+	text-align: center;
+}
+div.ui-resizable-handle.ui-resizable-se.ui-icon.ui-icon-gripsmall-diagonal-se {
+	background-image: none;
+}
+.info-title {
+	text-align: center;
+}
+.info-hr {
+	margin: 10px;
+	border-top: 1px solid #275f6c;
+}
+
+.inputRequired{
+  color: $color-warning;
+}
+
+.dropzone{
+  line-height:100px;
+  text-align:center;
+  background: $greyish-lightness;
+  border: 2px solid $greyish-light;
+  color:$greyish;
+  width: 100%;
+
+  .dropzoneImageThumb{
+    display: inline-block;
+    position: relative;
+    width: 33.333%;
+    padding: $base-size;
+    img{
+      box-shadow: $shadow;
+      max-width: 100%;
+    }
+  }
+
+  .dropzoneImageThumbDeleteButton{
+    cursor: pointer;
+    top: 24px;
+    left: 24px;
+    width: 25px;
+    height: 25px;
+    color: black;
+    position: absolute;
+    background: #000;
+    > div{
+
+    }
+  }
+}
+
+.wavy-line{
+  position: relative;
+  &:after{
+    display: block;
+    position: absolute;
+    right: -12px;
+    top: 50%;
+    content: "〜";
+    margin-top: -12px;
+    margin-right: -6px;
+  }
+}

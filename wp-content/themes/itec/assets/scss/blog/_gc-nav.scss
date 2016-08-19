@@ -1,0 +1,52 @@
+
+#nav-right {
+  position: fixed;
+  height: 100%;
+  max-height: 100%;
+  top: 0;
+  z-index: 10001;
+  width: $side-nav-width-l;
+  font-size: 12px;
+  right: 0;
+  margin-right: -$side-nav-width-l;
+  transform: translate(0, 0);
+  transition: transform .4s $ease;
+
+  @media (max-width: $side-nav-width-l) {
+    margin-right: -$side-nav-width-m;
+    width: $side-nav-width-m;
+  }
+
+  @media (max-width: $side-nav-width-m) {
+    margin-right: -$side-nav-width;
+    width: $side-nav-width;
+  }
+
+  &.active {
+    transform: translate(-$side-nav-width-l, 0);
+    @media (max-width: 768px) {
+      transform: translate(-$side-nav-width, 0);
+      margin-right: -$side-nav-width;
+    }
+  }
+	.tab-content {
+		margin-top: $header-height;
+		padding-bottom: ($header-height);
+		max-height: 100%;
+		width: 100%;
+		top: 0;
+		position: absolute;
+		z-index: 1000;
+		height: 100%;
+    // height: calc(100% - 60px);
+		background: #fff;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+	}
+	// タブメニュー
+  @import 'gc-nav-right-tab';
+	// カートのスタイル
+  // @import 'gc-nav-right-cart';
+  // お知らせ
+  @import 'gc-nav-right-notice';
+}
