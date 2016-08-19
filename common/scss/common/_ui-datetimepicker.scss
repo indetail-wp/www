@@ -1,0 +1,293 @@
+$datetimepicker-padding: 15px;
+$datetimepicker-cell-width: 36px;
+$datetimepicker-table-width: ($datetimepicker-cell-width*7) + ($datetimepicker-padding*2);
+
+.bootstrap-datetimepicker-widget,.datepicker {
+  list-style: none;
+  // animation: fade-in .3s $ease;
+  // margin: 4px 0;
+  &.dropdown-menu{
+    margin: 0;
+    padding: $datetimepicker-padding;
+    width: $datetimepicker-table-width;
+    border:none;
+    background: $color-navy-light;
+    box-shadow: $shadow-l;
+    &:after {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      left: 10px;
+    }
+    &.bottom:after, &.datepicker-orient-top:after {
+      border-bottom: 8px solid $color-navy-light;
+      top: -8px;
+    }
+    &.top:after, &.datepicker-orient-bottom:after {
+      border-top: 8px solid $color-navy-light;
+      bottom: -8px;
+    }
+    &.pull-right:after {
+      left: auto;
+      right: 10px;
+    }
+  }
+  .list-unstyled {
+    margin: 0;
+  }
+  a[data-action] {
+    padding: 0;
+    display: block;
+  }
+
+  a[data-action="togglePicker"]{
+    padding: 0;
+    display: block;
+    border: solid 1px $color;
+    height: $datetimepicker-cell-width;
+    border-radius: $datetimepicker-cell-width/2;
+    &:before{
+
+    }
+    &:hover{
+
+    }
+    span:hover{
+      border: none;
+    }
+    .glyphicon {
+      font-family: 'icons';
+      color: $color;
+      text-align: center;
+      font-size: 25px;
+      line-height: $datetimepicker-cell-width;
+      font-style: normal;
+    	font-weight: normal;
+      -webkit-font-smoothing: antialiased;
+    	-moz-osx-font-smoothing: grayscale;
+      &.glyphicon-time{
+        @extend .icon-circle-time-fill;
+      }
+      &.glyphicon-calendar{
+        @extend .icon-calendar-fill;
+      }
+    }
+  }
+
+  button[data-action] {
+    padding: 6px;
+  }
+  .btn {
+    min-width: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+  .picker-switch.accordion-toggle {
+    text-align: center;
+    padding: 15px 0;
+    td {
+      padding: 0;
+      margin: 0;
+      height: auto;
+      width: auto;
+      line-height: inherit;
+      span {
+        line-height: $datetimepicker-cell-width;
+        height: $datetimepicker-cell-width;
+        width: 100%;
+      }
+    }
+  }
+  table {
+    width: 100%;
+    margin: 0;
+    color: #fff;
+    font-size: 12px;
+    th {
+      color: $greyish;
+      text-align: center;
+      position: relative;
+      // border-radius: 4px;
+      font-size: 11px;
+      font-weight: normal;
+      width: 20px;
+      height: $datetimepicker-cell-width;
+      &.picker-switch {
+        // width: 145px;
+      }
+      &.disabled {
+        background: none;
+        color: $greyish;
+        cursor: not-allowed;
+        &:hover {
+          background: none;
+          color: #fff;
+          cursor: not-allowed;
+        }
+      }
+      &.prev, &.next{
+        text-indent: -999px;
+        overflow: hidden;
+      }
+      &.prev::after, &.next::after {
+        position: absolute;
+        line-height: 36px;
+        text-indent: 0;
+        right:0;
+        left:0;
+        top:0;
+        bottom:0;
+        padding: 0;
+        overflow: hidden;
+        font-family: "icons";
+        @extend .icon-arrow-left:before;
+        font-size: 16px;
+        color: inherit;
+      }
+      &.next::after {
+        // content: "\EA06";
+        transform: rotate(180deg);
+      }
+    }
+    thead tr:first-child th {
+      color: $color;
+      cursor: pointer;
+      font-size: 13px;
+      &:hover {
+        // background: $greyish-lightness;
+        color: #fff;
+      }
+    }
+    td {
+      text-align: center;
+      height: $datetimepicker-cell-width;
+      position: relative;
+      border-radius: 50%;
+      box-sizing: border-box;
+      &.cw {
+        color: $greyish;
+      }
+      &.day, &.hour, &.minute, &.second {
+        &:after{
+          content: '';
+          cursor: pointer;
+          position: absolute;
+          display: block;
+          border: solid 1px transparent;
+          left: 0;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          border-radius: 50%;
+          transition: all .3s $ease;
+        }
+        &:hover:after {
+          border-color: $color;
+        }
+      }
+      &.hour, &.minute, &.second {
+        height:63px;
+      }
+      &.old, &.new {
+        color: $greyish-light;
+      }
+      &.today {
+        position: relative;
+        &:before {
+          content: '';
+          display: block;
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          margin-right: -2px;
+          margin-bottom: 5px;
+          background: $color-alt;
+          position: absolute;
+          bottom: 3px;
+          right: 50%;
+        }
+      }
+      &.active {
+        background-color: $color;
+        color: #ffffff;
+        &.today:before {
+          background: #fff;
+        }
+      }
+      &.disabled, &.disabled:hover {
+        background: none;
+        color: $greyish;
+        cursor: not-allowed;
+      }
+      span {
+        display: inline-block;
+        width: 63px;
+        height: 63px;
+        line-height: 63px;
+        cursor: pointer;
+        border-radius: 63px 63px 63px 63px;
+        // box-sizing: border-box;
+        &.active, &:focus {
+          background-color: $color;
+          color: #ffffff;
+        }
+        &:hover {
+          border: solid 1px $color;
+          line-height: 61px;
+        }
+        &.old {
+          color: $greyish;
+        }
+        &.decade{
+          width: 84px;
+        }
+        &.disabled, &.disabled:hover {
+          background: none;
+          color: $greyish;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+}
+
+.timepicker{
+  .timepicker-hour, .timepicker-minute, .timepicker-second {
+    // width: 54px;
+    font-size: 1.5em;
+    margin: 0;
+  }
+  td, .btn{
+    height: 63px;
+  }
+
+  .glyphicon {
+    position: relative;
+
+    &:before{
+      position: absolute;
+      line-height: 63px;
+      right:0;
+      left:0;
+      top:0;
+      bottom:0;
+      padding: 0;
+      overflow: hidden;
+      font-family: "icons";
+      @extend .icon-arrow-left:before;
+      font-size: 16px;
+      color: $color;
+    }
+    &.glyphicon-chevron-up:before{
+      transform: rotate(90deg);
+    }
+    &.glyphicon-chevron-down:before{
+      transform: rotate(-90deg);
+    }
+    &:hover{
+      border: none;
+    }
+  }
+}

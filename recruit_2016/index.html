@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="IE=11.0000" http-equiv="X-UA-Compatible">
+<title>採用情報 株式会社INDETAIL</title>
+
+<link href="css/jquery.fullPage.css" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="css/btn.css" rel="stylesheet" type="text/css">
+<link rel="shortcut icon" href="http://www.indetail.co.jp/wp-content/themes/itec/assets/ico/favicon.png">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="assets/jquery-ui.min.js"></script>
+<script src="assets/jquery.fullPage.js" type="text/javascript"></script>
+
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+	<script type="text/javascript">
+
+		$(document).ready(function() {
+
+			$('#fullpage').fullpage({
+				easing: 'easeOutExpo',
+				'verticalCentered': false,
+				'anchors':[
+					'first',
+					'interview01',
+					'interview02',
+					'interview03',
+					'interview04',
+					'interview05',
+					'q&a',
+				],
+				'resize':false,
+				// 'css3': true,
+				// 'sectionsColor': ['#F0F2F4', '#fff', '#f6f6f6', '#fff'],
+				'navigation': true,
+				'navigationPosition': 'right',
+				'navigationTooltips': ['TOP', '代表インタビュー01', '代表インタビュー02', '代表インタビュー03', '代表インタビュー04', '代表インタビュー05', 'Q&A', '新人研修', '募集要項'],
+				scrollingSpeed: 1000,
+				// css3: true,
+				paddingBottom:'30px',
+
+				// scrollOverflow: true,
+
+				'afterLoad': function(anchorLink, index){
+					if(index == 1){
+						setClass('#exit-ipo');
+					}
+					if(index == 2){
+						setClass('#ceo-01');
+					}
+					if(index == 3){
+						setClass('#ceo-02');
+					}
+					if(index == 4){
+						setClass('#ceo-03');
+					}
+					if(index == 5){
+						setClass('#ceo-04');
+					}
+					if(index == 6){
+						setClass('#ceo-05');
+					}
+					if(index == 7){
+						setClass('#qa');
+					}
+					if(index == 8){
+						setClass('#training');
+					}
+					if(index == 9){
+						setClass('#entry');
+					}
+				},
+			});
+
+			addTouchHandler() ;
+		});
+
+		function setClass(this_id){
+
+			if(this_id == '#exit-ipo'){
+				$('#exit-ipo').addClass('afterload');
+			}else{
+				$('#exit-ipo').removeClass('afterload');
+			}
+
+			if(this_id == '#ceo-01'){
+				$('#ceo-01').addClass('afterload');
+			}else{
+				$('#ceo-01').removeClass('afterload');
+			}
+
+			if(this_id == '#ceo-02'){
+				$('#ceo-02').addClass('afterload');
+			}else{
+				$('#ceo-02').removeClass('afterload');
+			}
+
+			if(this_id == '#ceo-03'){
+				$('#ceo-03').addClass('afterload');
+			}else{
+				$('#ceo-03').removeClass('afterload');
+			}
+
+			if(this_id == '#ceo-04'){
+				$('#ceo-04').addClass('afterload');
+			}else{
+				$('#ceo-04').removeClass('afterload');
+			}
+
+			if(this_id == '#ceo-05'){
+				$('#ceo-05').addClass('afterload');
+			}else{
+				$('#ceo-05').removeClass('afterload');
+			}
+
+			if(this_id == '#qa'){
+				$('#qa').addClass('afterload');
+			}else{
+				$('#qa').removeClass('afterload');
+			}
+
+			if(this_id == '#training'){
+				$('#training').addClass('afterload');
+			}else{
+				$('#training').removeClass('afterload');
+			}
+
+			if(this_id == '#entry'){
+				$('#entry').addClass('afterload');
+			}else{
+				$('#entry').removeClass('afterload');
+			}
+		}
+	</script>
+
+</head>
+<body>
+
+<div class="brand">
+	<a href="#first"><img src="img/logo.png"/></a>
+</div>
+
+<div id="fullpage">
+
+	<div class="section afterload" id="exit-ipo">
+		<div class="wrap">
+			<div class="table-center">
+				<div class="table-center-cell">
+					<img src="img/exit.png" />
+					<h4>INDETAIL RECRUITMENT</h4>
+					<h3>あなたの好奇心が、未来を創る 。</h3>
+					<div class="text">
+						<!-- 発展途上。だから面白い。<br>
+						すでに出来上がった会社にはない、勢いや活気を感じませんか。<br> -->
+						「北海道発のベンチャーとしてIPOを実現する」がインディテールのビジョン。<br>
+						北海道で働きながら、上場という一大イベントを体験できるチャンスはそうそうありません。<br>
+						やりがいや刺激を大切にしている方の応募をお待ちしています。
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="section" id="ceo-01">
+		<div class="wrap">
+			<div class="box-left">
+
+				<h2><span class="ruby">INTERVIEW</span><span class="jp">あえてベンチャーに<br>こだわりたい。</span><img src="img/ceo/number-01.png" /></h2>
+				<div class="table">
+					<div class="table-left">
+						「景気に左右される」「キャリアアップできない」「自分の将来が見えない」。そんなふうに嘆いているエンジニアは多いと思いますが、それは北海道のIT企業が下請けに依存していることに大きな原因があります。
+					</div>
+					<div class="table-center"></div>
+					<div class="table-right">
+						当社では、独自の技術力やクリエイティビティを強みに大手から直接受注。事業を拡大してきました。しっかりとした企業戦略やビジョンがあれば、北海道でベンチャーが成功することは不可能ではありません。「自分たちでも、やればできるんだ」ということを、身を持って証明したいと思っています。
+					</div>
+				</div>
+			</div>
+			<div class="box-right" id="ceo-01-img">
+				<div class="box-inner">
+					<h3><span>Birth Year 1977</span>DAISUKE TSUBOI</h3>
+					<h4><span>代表取締役</span>坪井 大輔</h4>
+					<div class="text">
+
+						人材派遣会社の支社長を経て、<br>
+						２００９年１月に前身となるアイテック北海道を設立。<br>
+						会社経営の傍ら大学院に通い、ＭＢＡを取得した。
+					</div>
+					<div class=""></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section section-trichotomy section-even" id="ceo-02">
+		<div class="wrap">
+
+			<div class="box-left">
+				<h2><span class="ruby">INTERVIEW</span><span class="jp">念願の自社サービスが<br>ついに始動。</span><img src="img/ceo/number-02.png" /></h2>
+				<div class="table">
+					<div class="table-left">
+						その戦略の一環としてローンチしたのが、新規事業のECサービス<a href="http://www.moremall.jp" target="_blank">『MOREMALL（モアモール）』</a>です。これは、ネットモール、ECサイト、アプリがセットになったソリューションプラットフォームサービスです。開発から営業、カスタマーサービスまで自社で提供し、初年度で1000店舗の登録を目指しています。
+					</div>
+					<div class="table-center"></div>
+					<div class="table-right">
+						国内のECマーケットは10兆円以上。そして年々拡大しています。その1％でもシェアを獲得できれば、当社にとっては大きなビジネスになります。さらには、インディテールのブランドやオリジナリティを全国に発信するメディアにもなるでしょう。
+					</div>
+				</div>
+			</div>
+			<div class="box-right">
+				<h3>LAUNCH SERVICES</h3>
+			</div>
+		</div>
+	</div>
+
+	<div class="section section-trichotomy" id="ceo-03">
+		<div class="wrap">
+			<div class="box-left">
+				<h2><span class="ruby">INTERVIEW</span><span class="jp">心に響く製品を&nbsp;&nbsp;  <br>提供するには。</span><img src="img/ceo/number-03.png" /></h2>
+				<div class="table">
+					<div class="table-left">
+						スマホの可能性にいち早く着目して、アプリ開発の技術とノウハウを蓄積してきた当社。アプリ開発を行う会社が増えた中、先駆者として競争力を一段と高めていかなくてはなりません。そのキーワードになるのが『デザイン』だと考えています。
+					</div>
+					<div class="table-center"></div>
+					<div class="table-right">
+						もはやアプリやシステムを開発できるのは当たり前。「気持ちよさ」や「かっこよさ」といったユーザーエクスペリエンスが選ばれる会社のポイントになります。家電、アパレル、家具など、IT以外のジャンルにもアンテナを広げて、デザイン性を追求したモノづくりをしていきます。
+					</div>
+				</div>
+			</div>
+			<div class="box-right">
+				<h3>UI/UX DESIGN</h3>
+			</div>
+		</div>
+	</div>
+
+	<div class="section section-trichotomy section-even" id="ceo-04">
+		<div class="wrap">
+			<div class="box-left">
+				<h2><span class="ruby">INTERVIEW</span><span class="jp">組織を底上げして<br>次の成長フェーズへ。</span><img src="img/ceo/number-04.png" /></h2>
+				<div class="table">
+					<div class="table-left">
+						これまでは私や一部の社員が、がむしゃらに会社を引っ張ってきた部分もありました。ですが、社員が50人を超え、会社の急成長に組織が追いついていないという問題もあります。そのため、2014年のスローガンのひとつに組織づくりを掲げました。
+					</div>
+					<div class="table-center"></div>
+					<div class="table-right">
+						開発部門と営業部門をつなぐPMOというポストを新設したほか、マーケティングチームやカスタマーセンターを立ち上げました。成果が出るのはこれからですが、さらにレベルの高いニーズに応えられるように、組織全体で人材を育てていきます。
+					</div>
+				</div>
+			</div>
+			<div class="box-right">
+				<h3>NEXT PHASE</h3>
+			</div>
+		</div>
+	</div>
+
+	<div class="section section-trichotomy" id="ceo-05">
+		<div class="wrap">
+			<div class="box-left">
+				<h2><span class="ruby">INTERVIEW</span><span class="jp">会社の将来を決める<br>大事な採用です。</span><img src="img/ceo/number-05.png" /></h2>
+				<div class="table">
+					<div class="table-left">
+						私たちは必ずしも即戦力を必要としているわけではありません。みなさんには2～3年をかけて戦力になってほしいと思っています。そのころには、上場というビジョンが現実的になっています。その大事な時期に会社を支える柱になってもらいたいと願っています。
+					</div>
+					<div class="table-center"></div>
+					<div class="table-right">
+						ほかの製造業と違い、ソフトウェアは機械で作ることができません。ですから人材には投資しなければならないのです。私たちが追求する[going concern value]＝継続価値のベースとなるのは、一人ひとりの社員。職場環境や福利厚生ももっと充実させて、「ここで働きたい」と思える会社を作っていきます。
+					</div>
+				</div>
+			</div>
+			<div class="box-right">
+				<h3>RECRUITMENT</h3>
+			</div>
+		</div>
+	</div>
+
+	<div class="section section-trichotomy" id="qa">
+		<div class="wrap">
+			<a href="kihara.html" target="_brank" class="q02">
+				<div class="name">KIHARA</div>
+				<div class="cell">
+					<div class="text"><span>Q.</span>ズバリ出世できますか？</div>
+				</div>
+			</a>
+			<a href="ishizuka.html" target="_brank" class="q03">
+				<div class="name">ISHIZUKA</div>
+				<div class="cell">
+					<div class="text"><span>Q.</span>女性も<br>活躍できますか？</div>
+				</div>
+			</a>
+			<a href="rikard.html" target="_brank" class="q04">
+				<div class="name">RIKARD</div>
+				<div class="cell">
+					<div class="text"><span>Q.</span>外国人の方が<br>働いているのは<br>珍しいですよね？</div>
+				</div>
+			</a>
+			<a href="kimura.html" target="_brank" class="q05">
+				<div class="name">KIMURA</div>
+				<div class="cell">
+					<div class="text"><span>Q.</span>採用ページが<br>凝ってますよね。</div>
+				</div>
+			</a>
+			<a href="kawashima.html" target="_brank" class="q06">
+				<div class="name">KAWASHIMA</div>
+				<div class="cell">
+					<div class="text"><span>Q.</span>成長の秘密を<br>教えてください。</div>
+				</div>
+			</a>
+		</div>
+	</div>
+
+	<div class="section section-trichotomy" id="training">
+		<div class="wrap">
+			<div class="box-top">
+				<table>
+					<tr>
+						<td>
+							<h2>新人研修制度<span class="block">EDUCATION</span></h2>
+							1ヶ月間の充実した技術研修・座学研修により、<br>
+							技術的スキル・ヒューマンスキル及びセキュリティ意識を高め、現場へ配属いたします。<br>
+							新入社員のスキルや一般常識を会社側も理解をし、フォローしながら受託開発もしくはSES事業に従事していただきます。
+						</td>
+					</tr>
+				</table>
+
+			</div>
+			<div class="box-bottom">
+				<table>
+					<tr>
+						<td class="left">
+							<h2><span>技術研修</span></h2>
+							<div>スマートフォンアプリを、企画～リリース（マーケット公開）までをフォローを受けながら開発して頂きます。
+							この実践的かつユニークな技術研修は、他社にはない当社の大きな特徴です。</div>
+						</td>
+						<td class="right">
+							<h2><span>座学研修</span></h2>
+							<div>自社の経営理念・ビジョンや、当社の一員としての規範の他、社内ルール・事業内容も含めた研修を実施いたします。
+							研修期間終了時は、筆記試験も実施しております。</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="section" id="entry">
+		<div class="wrap">
+			<div class="table-center">
+				<div class="table-center-cell">
+					<h2>現在募集中の職種<span>REQUIREMENTS</span></h2>
+
+					<a href="http://www.indetail.co.jp/recruit/?index=0#recruit-for-link">
+						<div class="general-button">
+							<div class="button-content">
+								<span class="button-text">フロントエンドエンジニア</span>
+							</div>
+						</div>
+					</a><br>
+
+					<a href="http://www.indetail.co.jp/recruit/?index=1#recruit-for-link">
+						<div class="general-button">
+							<div class="button-content">
+								<span class="button-text">インフラエンジニア</span>
+							</div>
+						</div>
+					</a><br>
+
+					<a href="http://www.indetail.co.jp/recruit/?index=2#recruit-for-link">
+						<div class="general-button">
+							<div class="button-content">
+								<span class="button-text">モバイルアプリエンジニア</span>
+							</div>
+						</div>
+					</a><br>
+
+					<a href="http://www.indetail.co.jp/recruit/?index=3#recruit-for-link">
+						<div class="general-button">
+							<div class="button-content">
+								<span class="button-text">バックエンドエンジニア</span>
+							</div>
+						</div>
+					</a><br>
+
+					<a href="http://www.indetail.co.jp/recruit/?index=4#recruit-for-link">
+						<div class="general-button">
+							<div class="button-content">
+								<span class="button-text">ゲームプロデューサー候補</span>
+							</div>
+						</div>
+					</a><br>
+
+					<a href="http://www.indetail.co.jp/recruit/?index=5#recruit-for-link">
+						<div class="general-button">
+							<div class="button-content">
+								<span class="button-text">ゲームディレクター候補</span>
+							</div>
+						</div>
+					</a><br>
+
+					<a href="http://www.indetail.co.jp/recruit/?index=6#recruit-for-link">
+						<div class="general-button">
+							<div class="button-content">
+								<span class="button-text">ゲームUIデザイナー</span>
+							</div>
+						</div>
+					</a><br>
+
+					<a href="http://www.indetail.co.jp/recruit/?index=7#recruit-for-link">
+						<div class="general-button">
+							<div class="button-content">
+								<span class="button-text">ゲームプランナー</span>
+							</div>
+						</div>
+					</a><br>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div>
+
+<footer>
+	<section><a href="http://www.indetail.co.jp"><div class="logo"><img src="img/footer-logo.png" /></div></a></section>
+	<!-- <section><a href="http://www.indetail.co.jp"><div class="logo"><img src="img/footer-logo.png" /></div>アイテック北海道</a> ｜ 011-206-9235</section> -->
+	<a href="http://www.indetail.co.jp/recruit/#contact" target="_blank" class="entry-btn">ENTRY</a>
+</footer>
+
+</body>
+</html>

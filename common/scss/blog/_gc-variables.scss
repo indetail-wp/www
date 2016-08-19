@@ -1,0 +1,143 @@
+//
+// Vertical Rhythm
+// $base-size : 24px;
+//
+
+//
+// Theme Color
+//
+$base-color            : #333333;
+$base-color-luminance  : luminance($base-color);
+$base-color-tone       : color-tone($base-color);
+$base-color-hue        : hue($base-color);
+$base-color-saturation : saturation($base-color);
+$base-color-lightness  : lightness($base-color);
+
+@debug base-colorのトーン $base-color-tone , 輝度 $base-color-luminance, 色相 $base-color-hue, 彩度 $base-color-saturation, 明度 $base-color-lightness;
+
+//
+// Elements Color
+//
+$color               : if($base-color-saturation >= 1, $base-color, #33bbee);
+$color-alt           : adjust-hue($color, -180deg);
+$luminance-threshold : 60;
+
+//
+// Common Variables
+// 上記の$colorからカラースキームなどを定義 adminと共通
+//
+@import '../common/common-variables';
+
+//
+// Font Color
+//
+$font-color : $greyish-darkness;
+
+//
+// Link Color
+//
+$link-color         : $color-dark;
+$link-color-hover   : $color-light;
+$link-color-active  : $color-light;
+$link-color-visited : $color;
+$link-color-focus   : $color;
+
+//
+// Header
+//
+$header-height          : $base-size * 3;
+$header-logo-height     : $header-height - $base-size;
+$header-bg-color        : rgba($color, 0.95);
+// luminance-contrast( コントラストを判定する色, 輝度のしきい値(0-100), 明るい場合に返す色, 暗い場合に返す色 )
+$header-elements-color  : luminance-contrast( $header-bg-color, $luminance-threshold, $color-darkness, white );
+$header-btn-hover-color : luminance-contrast( $header-bg-color, $luminance-threshold, white, $color-darkness );
+@if $base-color-luminance >= 90 {
+  $header-bg-color        : rgba(#ffffff, 0.95);
+  $header-elements-color  : $font-color;
+  $header-btn-hover-color : $color;
+}
+
+//
+// Global Nav
+//
+$global-nav-height            : $base-size * 2;
+$global-nav-link-padding-y    : $base-size * 0.75;
+$global-nav-bg-color          : $color-dark;
+
+@if luminance($header-bg-color) <= 50 {
+  $global-nav-bg-color          : $color-light;
+}
+$global-nav-link-color        : luminance-contrast( $global-nav-bg-color, $luminance-threshold, $font-color, $color-lightness );
+$global-nav-link-active-color : luminance-contrast( $global-nav-bg-color, $luminance-threshold, $color-dark, white );
+$global-nav-link-hover-color  : luminance-contrast( $global-nav-bg-color, $luminance-threshold, $color-dark, white );
+@if $base-color-luminance >= 90 {
+  $global-nav-bg-color          : $greyish-lightness;
+  $global-nav-link-color        : $font-color;
+  $global-nav-link-active-color : $color-dark;
+  $global-nav-link-hover-color  : $color-dark;
+}
+
+
+
+
+//
+// Side Nav
+//
+$side-nav-width   : $base-size * 12;
+$side-nav-width-m : $base-size * 16;
+$side-nav-width-l : $base-size * 20;
+
+//
+// Slider
+//
+$mainpict-slider-maxheight : $base-size * 18;
+
+//
+// Item List
+//
+$item-list-bg-color        : $greyish-lightness;
+$item-list-gutter-width    : 6px;
+$item-list-animation-speed : .4s;
+
+//
+// Item List Card
+//
+$item-bg-color          : white;
+$item-title-color       : $font-color;
+$item-title-color-hover : $color-dark;
+$item-title-size        : 1rem;
+$item-padding           : 1rem;
+$item-radius            : 0;
+$item-author-img-size   : $base-size * 2;
+$item-label-bg          : $color;
+$item-label-text-color  : luminance-contrast( $item-label-bg, $luminance-threshold, $color-dark, white );
+
+//
+// Footer
+//
+$footer-bg-color       : white;
+$footer-elements-color : greyish;
+
+//
+// Entry
+//
+$entry-header-min-height    : $base-size * 12;
+$entry-header-padding-x     : $base-size * 1.5;
+$entry-header-border-bottom : none;
+
+//
+// Entry Share btn
+//
+$share-btn-height : $base-size * 2;
+$share-btn-radius : $share-btn-height / 2;
+$share-btn-margin : $base-size * 2 0 $base-size;
+
+//
+// Toppage SNS btn Group
+//
+$shs-btn-group-bg      : white;
+$shs-btn-group-padding : $base-size;
+
+//
+// Overray Background Color
+//

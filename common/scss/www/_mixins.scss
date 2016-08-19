@@ -1,0 +1,30 @@
+//  Fontsize
+@mixin fz($fz: 14, $lh: 20) {
+  font-size: #{$fz}px;
+  $lh_num : ($lh / $fz)* 1;
+  $lh_round : round-decimal($lh_num, 3);
+  line-height: #{$lh_round};
+}
+
+.pcOnly {
+	@if $mq-tb or $mq-sp {
+		display: none;
+	}
+}
+
+.tbOnly {
+	@if $mq-pc {
+		display: none;
+	}
+	@if $mq-sp {
+		display: none;
+	}
+}
+.spOnly {
+	@if $mq-pc {
+		display: none;
+	}
+	@if $mq-tb{
+		display: none;
+	}
+}

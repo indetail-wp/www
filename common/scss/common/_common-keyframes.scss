@@ -1,0 +1,110 @@
+// 拡大
+@keyframes opacity {
+  from {
+    @include transform(scale(0, 0));
+  }
+  to {
+    @include transform(scale(1, 1));
+  }
+}
+
+// 背景 ブラックアウト
+@keyframes bg-light-off {
+  from {background: rgba(50,50,50,0);}
+  to {background: rgba(50,50,50,.95);}
+}
+
+@keyframes bg-light-on {
+  0% {background: rgba(50,50,50,95); z-index: 1000;}
+  99% {background: rgba(50,50,50,.0); z-index: 1000;height: 100vh;}
+  100% {background: rgba(50,50,50,.0); z-index: 0;height: 0;}
+}
+
+@keyframes bg-black-out {
+  from {background: rgba(50,50,50,0);}
+  to {background: rgba(50,50,50,.95);}
+}
+
+@keyframes varHide {
+  from {opacity: 1.0; transform: translate(0px,0px); }
+  to {opacity: 0.0; transform: translate(100px,0px); }
+}
+@keyframes varShow {
+  from {opacity: 0.0; transform: translate(-10px,0px) }
+  to {opacity: 1.0; transform: translate(0px,0px) }
+}
+
+// 回転　ローディング
+@keyframes rotation {
+  from {
+    transform:rotate(0deg);
+  }
+  to {
+    transform:rotate(360deg);
+  }
+}
+
+// フェードイン
+@keyframes fade-in {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+// フェードアウト
+@keyframes fade-out {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+@keyframes zoom-in {
+  0% {transform: scale(0);}
+  100% {transform: scale(1);}
+}
+
+// フェードアウト
+@keyframes loading-fade-out {
+  0% {opacity: 1;}
+  99% {opacity: 0; width:100px; height: 100px;}
+  100% {opacity: 0; width:0; height: 0;}
+}
+
+// 点滅
+// @keyframes blink {
+//   0% {opacity: 0;}
+//   50% {opacity: 1;}
+//   100% {opacity: 0;}
+// }
+
+// ズームイン
+@keyframes item-zoom-in {
+  0% { opacity: 0; transform: translateY(0) scale(0.75); }
+  100% { opacity: 1; transform: translateY(0) scale(1);}
+}
+// @keyframes zoom-in-2 {
+//   0% { opacity: 0; transform: scale(0); }
+//   100% { opacity: 1; transform: scale(1);}
+// }
+// ズームアウト
+// @keyframes zoom-out {
+//   0% { transform:scale(1); opacity: 1; }
+//   100% { transform:scale(0.8); opacity: 0; }
+// }
+
+// ローディング
+@keyframes loading-show {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+@keyframes loading-hide {
+  0% {opacity: 1;height: 100px;}
+  99% {opacity: 0;height: 100px;}
+  100% {height: 0;opacity: 0;}
+}
+
+@keyframes notice-show {
+  0% {opacity: 0.0;transform: translate(120%,0px);top: $base-size / 2; right: $base-size / 2;}
+  10% {opacity: 1.0;transform: translate(0px,0px);}
+  90% {opacity: 1.0;transform: translate(0px,0px);}
+  99% {opacity: 0; top: $base-size / 2; right: $base-size / 2;}
+  100% {display: none; opacity: 0; top: -$base-size * 10; right: -$base-size * 10;}
+}

@@ -1,0 +1,70 @@
+.general-button  {
+	display: inline-block;
+	width:100%;
+  border-radius: 0px;
+  background-color: #288bc0;
+  margin:2px;
+}
+
+.general-button:before  {
+  border-radius: 0px;
+  border-bottom: 0px solid rgba(13,47,65, 0);
+  background-color: rgba(13,47,65, 0);
+}
+
+.button-content  {
+  border-radius: 0px 0px 0px 0px;
+  padding: 10px 13.5px;
+  box-shadow: 0px 0px 0px 0px rgba(13,47,65, 0);
+  color: #ffffff;
+	width:100%;
+}
+
+.button-text  {
+  padding: 0px 13.5px;
+  line-height: 1.9em;
+  font-size: 12px;
+  color:#fff;
+
+}
+
+.icon-font  {
+  padding: 0px 13.5px;
+  font-size: 30px;
+}
+
+.button-wrap{
+	width: 80%;
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.button-wrap a{
+	display: inline-block;
+	margin: 5px;
+	width: 200px;
+}
+
+.button-wrap a:hover{
+	opacity: 0.8;
+}
+
+#training h2{
+	line-height: 130%;
+	font-size: 1.5em;
+}
+
+#training h2 span.block{
+	display: block;
+	font-size: 10px;
+	line-height: 150%;
+	padding: 5px 0;
+	color: #288bc0;
+	letter-spacing: .2em;
+}
+
+
+
+/*----------------- at hover -----------------*/
+
+.genera

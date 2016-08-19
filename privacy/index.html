@@ -1,0 +1,140 @@
+<?php
+	$title = '個人情報保護方針';
+	$description = '株式会社INDETAILの個人情報保護方針について。';
+	$cat = 'privacy';
+	$page = 'index';
+?>
+<?php include($_SERVER["DOCUMENT_ROOT"]."/common/php/head.php"); ?>
+
+<main class="mod-mv">
+	<div class="mod-mv-in">
+		<p class="mod-mv-en">PRIVACY POLICY</p>
+		<h1 class="mod-mv-h">プライバシーポリシー</h1>
+	</div>
+	<a href="#mod-mainContent" class="mod-mv-arrow"><img src="/common/img/base/arrow_b_wh.svg" height="22" alt=""></a>
+</main>
+
+<div class="mod-mainContent" id="mod-mainContent">
+	<div class="wrap-in privacy-in">
+		<section class="privacy-sec">
+			<h2 class="privacy-sec-h">個人情報の定義</h2>
+			<article class="privacy-sec-article">
+				<p>
+					株式会社INDETAIL（以下当社と言います）では、生存する個人に関する情報（氏名や生年月日など、特定の個人を識別可能な情報）、 特定の個人と結びつけられたメールアドレス、ユーザーＩＤ、パスワード、クレジットカードなどの情報、 個人に関する趣味・家族構成・年齢などの属性情報を個人情報と考えています。
+				</p>
+			</article>
+		</section>
+		<section class="privacy-sec">
+			<h2 class="privacy-sec-h">IPアドレス・Cookieの扱い</h2>
+			<article class="privacy-sec-article">
+				<p>
+					IPアドレス・Cookieは単独で個人を特定できないため、個人情報とは考えません。 また、これら情報を個人情報と結びつけることはありません。
+				</p>
+			</article>
+		</section>
+		<section class="privacy-sec">
+			<h2 class="privacy-sec-h">アクセスログの扱い</h2>
+			<article class="privacy-sec-article">
+				<p>
+					当社webサイトでは、サイトの品質向上を目的としてアクセスログを取得しておりますが、 これら情報を個人情報と結びつけることはありません。
+				</p>
+			</article>
+		</section>
+		<section class="privacy-sec">
+			<h2 class="privacy-sec-h">個人情報の収集・利用・第三者への提供</h2>
+			<article class="privacy-sec-article">
+				<p>
+					当社が個人情報を収集する際には、収集する内容・利用目的を明確にし、 本人の同意なく目的外の利用を行いません。 また、本人の同意なく収集した個人情報を第三者に対し提供することはありません。 ただし、以下の場合を除きます。<br />
+					本人の同意を得ることにより、本人を含む特定個人の生命・身体・財産その他の権利利益を侵害しうる場合<br />
+					本人の同意を得ることにより、当社の権利または正当な利益を害しうる場合<br />
+					国の機関もしくは地方公共団体が法令の定める事務を遂行することに対して、当社が協力する必要があり、 その旨をご本人に通知し、または公表することにより当該事務の遂行に支障を及ぼしうる場合。
+				</p>
+			</article>
+		</section>
+		<section class="privacy-sec">
+			<h2 class="privacy-sec-h">個人情報の開示・訂正・利用の停止</h2>
+			<article class="privacy-sec-article">
+				<p>
+					ご本人、または弁護士・代理人から個人情報の開示・訂正・利用停止要請があった場合は遅滞なく対応し、 以下の理由などにより要請に応じられない場合は、理由を含めその旨を通知します。<br />
+					本人を含む特定個人の生命・身体・財産その他の権利利益を侵害しうる場合<br />
+					当社の権利または正当な利益を害しうる場合<br />
+					法令に違反する場合
+				</p>
+			</article>
+		</section>
+
+	</div>
+
+	<section class="privacy-form">
+		<h2 class="mod-sec-h">お問い合わせ</h2>
+		<div class="mod-sec-content">
+			<div class="wrap-in">
+				<p class="mod-form-txt">
+					当社のプライバシーポリシーに関するお問い合わせは、下記までご連絡ください。<br />
+					<br />
+					株式会社INDETAIL<br />
+					〒060-0042 札幌市中央区大通西9丁目3番33 キタコーセンタービルディング9階<br />
+					011-206-9235 （10:00～18:00 土・日・祭日・年末年始を除く）
+				</p>
+				<form id="mailForm" name="mailForm" action="mailSend_p.php" method="post">
+				<div class="mod-form-formWrap">
+					<div class="mod-form-table">
+						<div class="mod-form-table-col">
+							<dl>
+								<dt>
+									会社名（必須）※個人の場合は「個人」とご入力ください
+								</dt>
+								<dd>
+									<input type="text" id="corporate_name" name="corporate_name"  class="mod-input-text " required />
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									お名前（必須）
+								</dt>
+								<dd>
+									<input type="text" id="name" name="name"  class="mod-input-text " required />
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									メールアドレス（必須）
+								</dt>
+								<dd>
+									<input type="text" id="mail" name="mail" class="mod-input-text" required />
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									電話番号（必須）<span>※ハイフンなしで入力してください。</span>
+								</dt>
+								<dd>
+									<input type="text" id="phone" name="phone" pattern="^[0-9]+$" class="mod-input-text " required />
+								</dd>
+							</dl>
+						</div>
+						<div class="mod-form-table-col">
+							<dl>
+								<dt>
+									お問合せ内容（必須）
+								</dt>
+								<dd>
+									<textarea class="mod-input-textarea" name="opinion" id="opinion" required /></textarea>
+								</dd>
+							</dl>
+							<div class="mod-form-btns">
+								<input id="submit" type="submit" value="送信" class="mod-input-btn mod-btn01">
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+			</form>
+			</div>
+		</div>
+	</section>
+
+</div>
+
+<?php include($_SERVER["DOCUMENT_ROOT"]."/common/php/foot.php"); ?>

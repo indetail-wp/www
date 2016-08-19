@@ -1,0 +1,131 @@
+@CHARSET "ISO-8859-1";
+/* Reset CSS --------------------------------------- */
+/* line 4, C:/Project/recruit_2015/scss/examples.scss */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td { padding: 0; margin: 0; }
+
+/* line 9, C:/Project/recruit_2015/scss/examples.scss */
+a { text-decoration: none; }
+
+/* line 12, C:/Project/recruit_2015/scss/examples.scss */
+table { border-spacing: 0; }
+
+/* line 15, C:/Project/recruit_2015/scss/examples.scss */
+fieldset, img { border: 0; }
+
+/* line 18, C:/Project/recruit_2015/scss/examples.scss */
+address, caption, cite, code, dfn, em, strong, th, var { font-weight: normal; font-style: normal; }
+
+/* line 22, C:/Project/recruit_2015/scss/examples.scss */
+strong { font-weight: bold; }
+
+/* line 25, C:/Project/recruit_2015/scss/examples.scss */
+ol, ul { list-style: none; margin: 0; padding: 0; }
+
+/* line 30, C:/Project/recruit_2015/scss/examples.scss */
+caption, th { text-align: left; }
+
+/* line 34, C:/Project/recruit_2015/scss/examples.scss */
+h1, h2, h3, h4, h5, h6 { font-weight: normal; font-size: 100%; margin: 0; padding: 0; color: #444; }
+
+/* line 41, C:/Project/recruit_2015/scss/examples.scss */
+q:before, q:after { content: ''; }
+
+/* line 44, C:/Project/recruit_2015/scss/examples.scss */
+abbr, acronym { border: 0; }
+
+/* Custom CSS --------------------------------------- */
+/* line 50, C:/Project/recruit_2015/scss/examples.scss */
+body { font-family: arial,helvetica; color: #333; color: rgba(0, 0, 0, 0.5); }
+
+/* line 55, C:/Project/recruit_2015/scss/examples.scss */
+.wrap { margin-left: auto; margin-right: auto; width: 960px; position: relative; }
+
+/* line 61, C:/Project/recruit_2015/scss/examples.scss */
+h1 { font-size: 6em; }
+
+/* line 64, C:/Project/recruit_2015/scss/examples.scss */
+p { font-size: 2em; }
+
+/* line 68, C:/Project/recruit_2015/scss/examples.scss */
+.intro p { width: 50%; margin: 0 auto; font-size: 1.5em; }
+
+/* line 73, C:/Project/recruit_2015/scss/examples.scss */
+.section { text-align: center; }
+
+/* line 76, C:/Project/recruit_2015/scss/examples.scss */
+#menu li { display: inline-block; margin: 10px; color: #000; background: #fff; background: rgba(255, 255, 255, 0.5); -webkit-border-radius: 10px; border-radius: 10px; }
+
+/* line 85, C:/Project/recruit_2015/scss/examples.scss */
+#menu li.active { background: #666; background: rgba(0, 0, 0, 0.5); color: #fff; }
+
+/* line 90, C:/Project/recruit_2015/scss/examples.scss */
+#menu li a { text-decoration: none; color: #000; }
+
+/* line 94, C:/Project/recruit_2015/scss/examples.scss */
+#menu li.active a:hover { color: #000; }
+
+/* line 97, C:/Project/recruit_2015/scss/examples.scss */
+#menu li:hover { background: rgba(255, 255, 255, 0.8); }
+
+/* line 100, C:/Project/recruit_2015/scss/examples.scss */
+#menu li a, #menu li.active a { padding: 9px 18px; display: block; }
+
+/* line 105, C:/Project/recruit_2015/scss/examples.scss */
+#menu li.active a { color: #fff; }
+
+/* line 108, C:/Project/recruit_2015/scss/examples.scss */
+#menu { position: fixed; top: 0; left: 0; height: 40px; z-index: 70; width: 100%; padding: 0; margin: 0; }
+
+/* line 118, C:/Project/recruit_2015/scss/examples.scss */
+.twitter-share-button { position: fixed; z-index: 99; right: 149px; top: 9px; }
+
+/* line 124, C:/Project/recruit_2015/scss/examples.scss */
+#download { margin: 10px 0 0 0; padding: 15px 10px; color: #fff; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); background-color: #49afcd; background-image: -moz-linear-gradient(top, #5bc0de, #2f96b4); background-image: -ms-linear-gradient(top, #5bc0de, #2f96b4); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5bc0de), to(#2f96b4)); background-image: -webkit-linear-gradient(top, #5bc0de, #2f96b4); background-image: -o-linear-gradient(top, #5bc0de, #2f96b4); background-image: linear-gradient(top, #5bc0de, #2f96b4); background-repeat: repeat-x; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5bc0de', endColorstr='#2f96b4', GradientType=0); border-color: #2f96b4 #2f96b4 #1f6377; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); filter: progid:DXImageTransform.Microsoft.gradient(enabled=false); -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; vertical-align: middle; cursor: pointer; display: inline-block; -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); }
+
+/* line 152, C:/Project/recruit_2015/scss/examples.scss */
+#download a { text-decoration: none; color: #fff; }
+
+/* line 156, C:/Project/recruit_2015/scss/examples.scss */
+#download:hover { text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); background-color: #2F96B4; background-position: 0 -15px; -webkit-transition: background-position .1s linear; -moz-transition: background-position .1s linear; -ms-transition: background-position .1s linear; -o-transition: background-position .1s linear; transition: background-position .1s linear; }
+
+/* line 166, C:/Project/recruit_2015/scss/examples.scss */
+#infoMenu { height: 20px; color: #f2f2f2; position: fixed; z-index: 70; bottom: 0; width: 100%; text-align: right; font-size: 0.9em; padding: 8px 0 8px 0; }
+
+/* line 177, C:/Project/recruit_2015/scss/examples.scss */
+#infoMenu ul { padding: 0 40px; }
+
+/* line 180, C:/Project/recruit_2015/scss/examples.scss */
+#infoMenu li a { display: block; margin: 0 22px 0 0; color: #333; }
+
+/* line 185, C:/Project/recruit_2015/scss/examples.scss */
+#infoMenu li a:hover { text-decoration: underline; }
+
+/* line 188, C:/Project/recruit_2015/scss/examples.scss */
+#infoMenu li { display: inline-block; position: relative; }
+
+/* line 192, C:/Project/recruit_2015/scss/examples.scss */
+#examplesList { display: none; background: #282828; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; padding: 20px; float: left; position: absolute; bottom: 29px; right: 0; width: 638px; text-align: left; }
+
+/* line 206, C:/Project/recruit_2015/scss/examples.scss */
+#examplesList ul { padding: 0; }
+
+/* line 209, C:/Project/recruit_2015/scss/examples.scss */
+#examplesList ul li { display: block; margin: 5px 0; }
+
+/* line 213, C:/Project/recruit_2015/scss/examples.scss */
+#examplesList ul li a { color: #BDBDBD; margin: 0; }
+
+/* line 217, C:/Project/recruit_2015/scss/examples.scss */
+#examplesList ul li a:hover { color: #f2f2f2; }
+
+/* line 220, C:/Project/recruit_2015/scss/examples.scss */
+#examplesList .column { float: left; margin: 0 20px 0 0; }
+
+/* line 224, C:/Project/recruit_2015/scss/examples.scss */
+#examplesList h3 { color: #f2f2f2; font-size: 1.2em; margin: 0 0 15px 0; border-bottom: 1px solid rgba(0, 0, 0, 0.4); -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1); -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1); box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1); padding: 0 0 5px 0; }
+
+/* Demos Menu --------------------------------------- */
+/* line 239, C:/Project/recruit_2015/scss/examples.scss */
+#demosMenu { position: fixed; bottom: 10px; right: 10px; z-index: 999; }
+
+/*@ sourceMappingURL=examples.css.map */

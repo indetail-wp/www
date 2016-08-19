@@ -1,0 +1,34 @@
+/* Overwriting fullPage.js tooltip color
+* --------------------------------------- */
+.fp-tooltip{
+	color: #ccc;
+	background:#333;
+	font-size: 11px;
+	padding:0 5px;
+}
+#fp-nav li .active span, .fp-slidesNav .active span{
+	background:#288bc0;
+	border:0;
+}
+
+#fp-nav.right{
+	right:10px;
+}
+
+#fp-nav li, .fp-slidesNav li {
+	margin:1px;
+	width: 15px;
+	height: 15px;
+}
+
+#fp-nav span, .fp-slidesNav span {
+	top: 2px;
+	left: 2px;
+	width: 8px;
+	height: 8px;
+	background:#ddd;
+	border:0;
+	border-radius: 50%;
+	position: absolute;
+	z-index: 1;
+}

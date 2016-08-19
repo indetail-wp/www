@@ -1,0 +1,142 @@
+//
+// HSB to RGBA
+//
+@function hsb($h-hsb, $s-hsb, $b-hsb, $a: 1) {
+  @if $b-hsb == 0 {
+    @return hsla(0, 0, 0, $a);
+  }
+  @else if $h-hsb == 0 and $s-hsb == 0 and $b-hsb == 100 {
+    @return hsla(255, 255, 255, $a);
+  }
+  @else {
+    $l-hsl: ($b-hsb/2) * (2 - ($s-hsb/100));
+    $s-hsl: ($b-hsb * $s-hsb) / if($l-hsl < 50, $l-hsl * 2, 200 - $l-hsl * 2);
+    @return hsla($h-hsb, $s-hsl, $l-hsl, $a);
+  }
+}
+
+//
+// グレートーン（明度が下がると比例して彩度が上がる）
+//
+@function greyish($amount: 1) {
+  $h: $greyish-h;
+  $s: round($greyish-s-rate * ($greyish-b-rate) * $amount);
+  $b: round(100 - ($greyish-b-rate * $amount));
+  @return hsb($h, $s, $b);
+}
+
+//
+// RGB to HSB
+//
+@function rgb-to-hsb($baseColor) {
+  $r-rgb: red($baseColor);
+  $g-rgb: green($baseColor);
+  $b-rgb: blue($baseColor);
+  $max: max($r-rgb, $g-rgb, $b-rgb);
+  $min: min($r-rgb, $g-rgb, $b-rgb);
+  $h-hsb: 0;
+  @if $max == $min {
+    $h-hsb: 0;
+  }
+  @else if $max == $r-rgb {
+    $h-hsb: 60 * (($g-rgb - $b-rgb) / ($max - $min));
+  }
+  @else if $max == $g-rgb {
+    $h-hsb: 60 * (($b-rgb - $r-rgb) / ($max - $min)) + 120;
+  }
+  @else if $max == $b-rgb {
+    $h-hsb: 60 * (($r-rgb - $g-rgb) / ($max - $min)) + 240;
+  }
+  $h-hsb: if($h-hsb < 0, $h-hsb + 360, $h-hsb);
+  $s-hsb: (($max - $min) / $max) * 100;
+  $b-hsb: ($max / 255) * 100;
+  @if $baseColor == #000000 {
+    $s-hsb: 0;
+  }
+  @return $h-hsb, $s-hsb, $b-hsb;
+}
+
+//
+// 色の輝度を%で返す
+//
+@function luminance($color) {
+  $colors: (
+    'red': red($color),
+    'green': green($color),
+    'blue': blue($color)
+  );
+
+  @each $name, $value in $colors {
+    $adjusted: 0;
+    $value: $value / 255;
+
+    @if $value < 0.03928 {
+      $value: $value / 12.92;
+    } @else {
+      $value: ($value + .055) / 1.055;
+      $value: pow($value, 2.4);
+    }
+    $colors: map-merge($colors, ($name: $value));
+  }
+  @return percentage((map-get($colors, 'red') * .2126) + (map-get($colors, 'green') * .7152) + (map-get($colors, 'blue') * .0722));
+}
+
+//
+// 色の輝度を判定して色を返す
+//
+@function luminance-contrast($rgb, $threshold: $luminance-threshold, $dark: $contrasted-dark-default, $light: $contrasted-light-default) {
+  // 輝度がしきい値($threshold)より明るい場合$dark、暗い場合$lightを返す
+  @if luminance($rgb) >= $threshold {
+    @return $dark;
+  }
+  @else {
+    @return $light;
+  }
+}
+
+//
+// トーンをlight soft dull darkの4段階で判定
+//
+@function color-tone($rgb) {
+
+  $luminance : luminance($rgb);
+  @if $luminance >= 76 {
+    @return light;
+  }
+  @else if $luminance >= 51 {
+    @return soft;
+  }
+  @else if $luminance >= 26 {
+    @return dull;
+  }
+  @else {
+    @return dark;
+  }
+}
+
+//
+//
+//
+@function elements-color($rgb) {
+  $luminance : luminance($rgb);
+  @if $luminance >= 76 {
+    @return light;
+  }
+  @else if $luminance >= 51 {
+    @return soft;
+  }
+  @else if $luminance >= 26 {
+    @return dull;
+  }
+  @else {
+    @return dark;
+  }
+}
+
+//
+// HSBのHue変更
+//
+@function adjust-hue-hsb($h, $s, $b, $amount){
+  $hue: $h + $amount;
+  @return hsb($hue, $s, $b);
+}

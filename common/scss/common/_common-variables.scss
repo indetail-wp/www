@@ -1,0 +1,158 @@
+//
+// Vertical Rhythm
+//
+$base-size           : 24px;
+$base-font-size      : 16px;
+$base-line-height    : $base-size;
+$rhythm-unit         : "rem";
+$rem-with-px-fallback: false;
+
+//
+// Primary Color
+//
+$color-hsb : rgb-to-hsb( $color );
+$hsb-h     : nth($color-hsb, 1); //色相
+$hsb-s     : nth($color-hsb, 2); //彩度
+$hsb-b     : nth($color-hsb, 3); //明度
+
+$color-dark     : darken( $color, 5% );
+$color-darkness : darken( $color, 30% );
+$color-light    : lighten( $color, 5% );
+$color-lightness: lighten( $color, 30% );
+
+//
+// Alternate Color
+//
+$color-alt-hsb : rgb-to-hsb( $color-alt );
+$hsb-alt-h     : nth($color-alt-hsb, 1);
+$hsb-alt-s     : nth($color-alt-hsb, 2);
+$hsb-alt-b     : nth($color-alt-hsb, 3);
+
+$color-alt-dark     : darken( $color-alt, 5% );
+$color-alt-darkness : darken( $color-alt, 30% );
+$color-alt-light    : lighten( $color-alt, 5% );
+$color-alt-lightness: lighten( $color-alt, 30% );
+
+//
+// Color Greyish
+//
+$greyish-h     : $hsb-h; // Hue
+$greyish-s-rate: 0.2;    // 彩度を上げるレート
+$greyish-b-rate: 3.3333; // 明度の階調のレート
+
+$greyish-darkness : greyish(26);
+$greyish-dark     : greyish(24);
+$greyish          : greyish(10);
+$greyish-light    : greyish(3);
+$greyish-lighter  : greyish(2);
+$greyish-lightness: greyish(1);
+
+//
+// Color Red
+//
+$color-red           : #cf3838;
+$color-red-dark      : darken( $color-red, 5% );
+$color-red-darkness  : darken( $color-red, 30% );
+$color-red-light     : lighten( $color-red, 5% );
+$color-red-lightness : lighten( $color-red, 30% );
+
+//
+// Color Green
+//
+$color-green           : #23C12E;
+$color-green-dark      : darken( $color-green, 5% );
+$color-green-darkness  : darken( $color-green, 30% );
+$color-green-light     : lighten( $color-green, 5% );
+$color-green-lightness : lighten( $color-green, 30% );
+
+//
+// Color Yellow
+//
+$color-yellow           : #C1C123;
+$color-yellow-dark      : darken( $color-yellow, 5% );
+$color-yellow-darkness  : darken( $color-yellow, 30% );
+$color-yellow-light     : lighten( $color-yellow, 5% );
+$color-yellow-lightness : lighten( $color-yellow, 30% );
+
+//
+// Color Blue
+//
+$color-blue           : #33bbee;
+$color-blue-dark      : darken( $color-blue, 5% );
+$color-blue-darkness  : darken( $color-blue, 30% );
+$color-blue-light     : lighten( $color-blue, 5% );
+$color-blue-lightness : lighten( $color-blue, 30% );
+
+//
+// Color Navy
+//
+$color-navy          : #242e33;
+$color-navy-dark     : darken( $color-navy, 5% );
+$color-navy-darkness : darken( $color-navy, 30% );
+$color-navy-light    : lighten( $color-navy, 5% );
+$color-navy-lighter: lighten( $color-navy, 25% );
+$color-navy-lightness: lighten( $color-navy, 50% );
+
+//
+// Color SNS
+//
+$color-f            : #3b5999;
+$color-t            : #55acee;
+$color-g            : #dc4a3d;
+$color-f-dark       : darken( $color-f, 10% );
+$color-t-dark       : darken( $color-t, 10% );
+$color-g-dark       : darken( $color-g, 10% );
+
+
+$color-warning      :$color-red-dark;
+
+//
+// Color Contrast
+//
+$contrasted-dark-default     : $color-darkness;
+$contrasted-light-default    : white;
+$contrasted-threshold-default: 70;
+
+//
+// Font Family
+//
+$font-family          : "Avenir Next", "century gothic", "Helvetica Neue", Helvetica, Arial, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
+$font-family          : Roboto, "Helvetica Neue", Helvetica, Arial, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
+$font-family-condensed: "Avenir Next Condensed", "Roboto Condensed", sans-serif;
+$font-family-thin     : Roboto, "Avenir Next", sans-serif;
+
+//
+// Column Width
+//
+$col-8 : 100%/8;
+$col-7 : 100%/7;
+$col-6 : 100%/6;
+$col-5 : 100%/5;
+$col-4 : 100%/4;
+$col-3 : 100%/3;
+$col-2 : 100%/2;
+$col-1 : 100%;
+
+//
+// Margin
+//
+$margin: $base-size;
+
+//
+// Shadow
+//
+$shadow  :0 1px 2px rgba(0,0,50,0.1);
+$shadow-l:0 1px 10px rgba(0,0,50,0.2);
+
+//
+// Easing
+//
+$ease       : cubic-bezier(0, 0, 0, 1);
+$ease-in-out: cubic-bezier(.8, 0, .2, 1);
+
+//
+// Border
+//
+$border       : solid 1px $greyish-light;
+$border-dotted: dotted 1px $greyish-light;
+$border-dashed: dashed 1px $greyish-light;

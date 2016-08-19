@@ -1,0 +1,131 @@
+
+
+.entry-header {
+  position: relative;
+  background-size: cover;
+  min-height: $entry-header-min-height;
+  overflow: hidden;
+  z-index: 1;
+  padding: $entry-header-padding-x 0;
+  border-bottom: $entry-header-border-bottom;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 640px){
+    padding: $entry-header-padding-x $base-size;
+  }
+
+  h1{
+    position: relative;
+    z-index: 2;
+    color: white;
+    line-height: 36px;
+    margin: 0 auto;
+    max-width: 640px;
+    @media (max-width: 640px){
+      font-size: 16px;
+      font-weight: bold;
+      line-height: $base-size;
+    }
+  }
+
+  // margin-bottom: 50px;
+  &:before {
+    @include pseudo-elements-display();
+    background-color: $color-dark;
+    background-image: inherit;
+    background-size: cover;
+    background-position: center;
+    left: -100px;
+    top: -100px;
+    right: -100px;
+    bottom: -100px;
+    // filter: blur(10px);
+    filter: brightness(0.7) blur(15px) grayscale(0%);
+    z-index: 1;
+  }
+}
+
+.entry{
+  // background: $greyish-lightness;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: $base-size*2 0 0;
+  @media (max-width: 640px){
+    padding:  $base-size $base-size 0;
+  }
+  position: relative;
+
+  // &.feature{
+  //   padding-top: 40px;
+  // }
+
+  .username{
+    position: absolute;
+    // margin-top: $base-size * -2;
+    line-height: 36px;
+    font-size: 11px;
+    z-index: 1;
+    color: white;
+    top:-36px;
+
+    .icon.icon-s:before {
+      margin-left: 0;
+      vertical-align: -.15em;
+    }
+    span{
+      margin-right: $base-size/2;
+    }
+    a{
+      color: white;
+      &:hover{
+        color: $color;
+      }
+    }
+  }
+
+  .userimg{
+    position: absolute;
+    right: 0;
+    top: $base-size * -1.5;
+    width: $base-size * 3;
+    height: $base-size * 3;
+    background: #fff;
+    background-size: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    border: solid 2px #fff;
+    z-index: 2;
+    @media (max-width: 640px){
+      right: $base-size;
+    }
+    img{
+      max-width: 100%;
+    }
+
+  }
+
+
+
+  .img{
+    margin: $base-size/4 0;
+
+    img{
+      max-width: 100%;
+    }
+  }
+
+  .rel{
+    color: $greyish;
+    font-size: 11px;
+    line-height: $base-size/2;
+    padding: $base-size/4 0;
+    margin-bottom: $base-size;
+  }
+
+  h3{
+    margin: 42px 0 18px;
+    line-height: 36px;
+    font-weight: bold;
+  }
+}

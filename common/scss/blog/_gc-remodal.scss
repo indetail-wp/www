@@ -1,0 +1,548 @@
+.remodal, [data-remodal-id] {
+    // visibility: hidden;
+}
+
+/* Overlay necessary styles */
+
+.remodal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    text-align: center;
+
+    & > * {
+    	transform: translateZ(0px);
+    }
+}
+
+.remodal-overlay {
+    background:rgba(255,255,255,0);
+    transition: opacity 0.4s linear;
+}
+
+body.remodal_active .remodal-overlay {
+    background:rgba(255,255,255,1);
+}
+
+.remodal {
+
+	display:inline-block;
+	z-index:10000;
+    opacity: 0;
+    background:rgba(255,255,255,.95);
+    width:100%;
+    box-sizing: border-box;
+    min-height:100%;
+    color:$greyish-dark;
+
+    font-size: 14px;
+    background-clip: padding-box;
+    transform: scale(0.95);
+    transition: all .2s linear;
+}
+
+body.remodal_active .remodal {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Modal dialog vertical align  */
+
+.remodal, .remodal-overlay:after {
+    vertical-align: middle;
+}
+
+/* Close button */
+
+.remodal-close {
+    box-sizing: border-box;
+    position: fixed;
+    top: 5px;
+    left: 5px;
+
+    width: 28px;
+    height: 28px;
+
+    text-decoration: none;
+    transition: background 0.4s linear;
+}
+
+.remodal-close:after {
+    display: block;
+    font-size: 28px;
+    font-family: Arial, 'Helvetica CY', 'Nimbus Sans L', sans-serif !important;
+    content: "×";
+    line-height: 24px;
+    cursor: pointer;
+    text-decoration: none;
+    color: $greyish-dark;
+    transition: all 0.4s linear;
+    text-align: center;
+}
+
+.remodal-close:hover, .remodal-close:active {
+    background: $greyish-dark;
+}
+
+.remodal-close:hover.remodal-close:after, .remodal-close:active.remodal-close:after {
+    color: $greyish-lightness;
+}
+
+/* Dialog buttons */
+
+.remodal-confirm, .remodal-cancel {
+    display: inline-block;
+    width: 140px;
+    padding: 9px 0;
+    margin: 0 0 5px 0;
+    font-size: 10pt;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 50px;
+    background-clip: padding-box;
+    transition: all 0.4s linear;
+}
+
+.remodal-confirm {
+    border: 2px solid #16a085;
+    background: #fff;
+    color: #16a085;
+}
+
+.remodal-confirm:hover, .remodal-confirm:active {
+    background: #16a085;
+    color: $greyish-lightness;
+}
+
+.remodal-cancel {
+    border: 2px solid #c0392b;
+    background: #fff;
+    color: #c0392b;
+}
+
+.remodal-cancel:hover, .remodal-cancel:active {
+    background: #c0392b;
+    color: $greyish-lightness;
+}
+
+
+
+
+/*
+
+modal
+
+*/
+$side-margin:240px;
+$color-hi-lite:rgba(255,255,255,0.1);
+$color-shadow:rgba(0,0,0,0.1);
+
+@mixin transition($easing:linear) {
+	-webkit-transition: all .2s $easing;
+	-moz-transition: all .2s $easing;
+	-ms-transition: all .2s $easing;
+	-o-transition: all .2s $easing;
+	transition: all .2s $easing;
+}
+
+@mixin transition-delay($second:2s) {
+	-webkit-transition-delay: $second;
+	-moz-transition-delay: $second;
+	-ms-transition-delay: $second;
+	-o-transition-delay: $second;
+	transition-delay: $second;
+}
+
+@mixin circle($size:100px) {
+     width: $size;
+     height: $size;
+     border-radius: 100%;
+}
+
+
+
+.remodal .stage{
+	display:block;
+	font-size:13px;
+	max-width:600px;
+	margin:40px auto;
+	-webkit-animation: showFade 0.2s linear 1;
+	text-align: left;
+
+	& .table{
+		display:table;
+		margin:0;
+		border-bottom: $border;
+		& > div {
+			display:table-cell;
+			padding:15px 0;
+			&:first-child{
+				width:33%;
+			}
+		}
+	}
+
+	// cart
+
+	& .shop-cart-item{
+		display:table;
+		width:100%;
+		margin:20px 0;
+		padding-bottom:20px;
+		border-bottom:dotted 1px $greyish-light;
+
+		& > div{
+			display:table-cell;
+			vertical-align: middle;
+			&.img{
+				width:80px;
+				& img{
+					width:100%
+				}
+			}
+			&.text{
+				padding-left:15px;
+				& input{
+					width:30px;
+					// line-height:30px;
+					height:30px;
+					padding:4px 8px;
+					margin:0 5px;
+					text-align:center;
+					font-size:14px;
+					border-radius:0;
+					border:solid 1px $greyish-light;
+					box-sizing:border-box;
+				}
+				& h4{
+					text-align: left;
+					font-weight: bold;
+					margin-top:0;
+				}
+			}
+		}
+	}
+
+	.input_styled{
+		// background: #FFF;
+		// padding: 15px;
+
+		& label{
+			margin-bottom:0;
+		}
+
+		& > div{
+			margin-bottom:12px;
+
+			&:last-child{
+				margin-bottom:0;
+			}
+		}
+	}
+
+	.btn-area{
+		text-align:center;
+		padding:30px 0;
+
+		& form{
+		}
+
+		& .btn{
+			margin-top:-30px;
+			margin-right:10px;
+		}
+	}
+
+	section {
+		margin-bottom: 20px;
+
+
+		& h3 {
+			text-align: left;
+			font-weight:bold;
+			border-left:0;
+			padding:0;
+			font-size:14px;
+		}
+
+		& h4,h5{
+			text-align: right;
+		}
+
+		&.address-group,&.contact-group,&.payment-method{
+			// background: #FFF;
+			padding:15px 0;
+			border-top:dotted 1px $greyish-light;
+			border-bottom:dotted 1px $greyish-light;
+		}
+
+		&.payment-method{
+
+			& + .payment-method{
+				border-top: 0;
+				margin-top: -20px;
+			}
+
+			& .payment-method-info{
+				margin-top: 20px;
+			}
+
+			& h5 {
+				text-align: left;
+			}
+
+		}
+
+		&.purchase-item-list{
+			// background: #FFF;
+			padding:15px 0;
+			border-top:dotted 1px $greyish-light;
+			border-bottom:dotted 1px $greyish-light;
+			display: table;
+			width:100%;
+
+			& >div{
+				display:table-cell;
+				vertical-align:middle;
+
+				&.img{
+					width:100px;
+
+					& img{
+						width:100%;
+					}
+				}
+
+				&.text{
+					padding:0 0 0 15px;
+
+					& h3 ,.variation{
+						margin:0 0 5px;
+					}
+
+					& .price{
+						display:inline-block;
+						padding:5px;
+						border:solid 2px $greyish-light;
+						margin-bottom:5px;
+
+						&.price-active{
+							border-color:$color;
+							color:$color;
+						}
+					}
+				}
+			}
+
+			& + .purchase-item-list{
+				border-top: 0;
+				margin-top: -20px;
+			}
+		}
+
+		&.purchase-price-group{
+			padding:10px 0;
+			margin-top: 15px;
+			text-align: right;
+
+			// border-top:dotted 1px $greyish-light;
+			border-bottom:dotted 1px $greyish-light;
+			& span{
+				font-weight: 500;
+        font-family: $font-family-condensed;
+				font-size:21px;
+				color:$color;
+			}
+		}
+
+		&.shipping-free-info{
+			color:$color;
+		}
+	}
+
+	& .input-lg{
+		font-size:13px;
+	}
+
+	& h1{
+		padding:0;
+		margin:40px 0;
+		font-size:24px;
+		text-align: center;
+	}
+
+	& h2{
+		font-size:17px;
+	}
+
+	& h3{
+		font-size: 16px;
+		margin: 40px 0 20px;
+		padding-left: 10px;
+		display: inline-block;
+		border-left: solid 3px $greyish-dark;
+		letter-spacing: 0.1em;
+	}
+
+	& h4{
+		font-size:13px;
+		text-align: center;
+	}
+
+	& h5{
+		font-size:11px;
+    margin: 10px 0 3px;
+
+		& span{
+			font-size: 15px;
+			font-weight: bold;
+		}
+	}
+
+
+
+	& .validateErr{
+		margin:5px 0 10px;
+		display: inline-block;
+	}
+
+	& .form-control{
+		display: table-cell;
+
+		&.w50{
+			width: 50%;
+		}
+	}
+
+
+
+
+	& table{
+	  width: 100%;
+	  margin: auto;
+	}
+	& table ,
+	table td  {
+	  border: 0px solid;
+	  text-align: left;
+	  padding: 5px;
+	}
+
+	& .btn-group{
+		margin:0 auto;
+		display: table;
+
+		.btn{
+			float:left;
+			min-width:150px;
+
+			@media (max-width: 480px){
+				min-width:0;
+			}
+		}
+	}
+
+
+	@-webkit-keyframes showFade {
+	  from {opacity: 0.2;}
+	  to {opacity: 1.0;}
+	}
+
+
+
+	& .form-control.small{
+		width: 40%;
+	}
+	& label {
+		font-weight: bold;
+		font-size: 14px;
+	}
+
+	& .flow{
+		display: table;
+		table-layout:fixed;
+		margin:20px auto;
+		width:100%;
+
+		& .flow-step{
+			display: table-cell;
+			padding:15px;
+			text-align: center;
+
+			& span{
+				display:block;
+				margin-bottom:5px;
+				background: $greyish-light;
+				color:#fff;
+				position: relative;
+			}
+
+			& span.active{
+				background: $greyish-dark;
+			}
+		}
+	}
+
+}
+
+@media (max-width: 640px){
+
+	.remodal {
+		& table, tbody, thead, tr, th, td {
+			display: block;
+		}
+
+		& .stage{
+			margin:40px 15px;
+
+			& .table{
+				display:block;
+				margin:0;
+				border-bottom: $border;
+
+				& > div {
+					display:block;
+					padding:10px 0;
+					&:first-child{
+						width:100%;
+						font-weight: bold;
+						padding-bottom:0;
+					}
+				}
+			}
+
+			& .form-control.w50 {
+				width: 100%;
+			}
+
+			& .shop-cart-item > div.img {
+				width: 60px;
+			}
+
+			& h1{
+				font-size: 20px;
+			}
+
+			& .flow{
+				& .flow-step{
+					padding:5px;
+					font-size: 12px;
+				}
+			}
+		}
+	}
+}
+
+.remodal h1.thankyou{
+  // font-family: "Robot";
+  font-weight: 100;
+  font-size: 48px;
+  font-style: normal;
+  margin: 60px 0 20px;
+}

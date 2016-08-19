@@ -1,0 +1,57 @@
+<?php
+	$title = '所在地';
+	$description = '札幌本社：札幌市中央区大通西9丁目3番地33　キタコーセンタービルディング2階。東京支社：東京都港区芝5丁目29番20号　クロスオフィス三田。';
+	$cat = 'company';
+	$page = 'access';
+?>
+<?php include($_SERVER["DOCUMENT_ROOT"]."/common/php/head.php"); ?>
+
+<main class="mod-mv">
+	<div class="mod-mv-in">
+		<p class="mod-mv-en">ACCESS MAP</p>
+		<h1 class="mod-mv-h">所在地</h1>
+	</div>
+	<a href="#mod-mainContent" class="mod-mv-arrow"><img src="/common/img/base/arrow_b_wh.svg" height="22" alt=""></a>
+</main>
+
+<div class="mod-mainContent" id="mod-mainContent">
+	<section class="company-access-profile">
+		<h2 class="mod-sec-h">所在地MAP</h2>
+		<div class="mod-sec-content">
+			<div class="wrap-in">
+				<section class="company-access-office">
+					<div class="company-access-office-gmap" id="gmap-sapporo"></div>
+					<div class="company-access-office-txtWrap">
+						<h3 class="company-access-office-h">SAPPORO</h3>
+						<p class="company-access-office-name">株式会社INDETAIL / 本社</p>
+						<p class="company-access-office-address">
+							〒060-0042 札幌市中央区大通西9丁目3番地33<br />
+							キタコーセンタービルディング2階
+						</p>
+						<p class="company-access-office-access">
+							JR札幌駅から車で10分、徒歩で19分<br />
+							地下鉄東西線「西11丁目駅」から徒歩3分<br />
+							地下鉄東西線、南北線「大通駅」から徒歩8分
+						</p>
+					</div>
+				</section>
+				<section class="company-access-office">
+					<div class="company-access-office-gmap" id="gmap-tokyo"></div>
+					<div class="company-access-office-txtWrap">
+						<h3 class="company-access-office-h">TOKYO</h3>
+						<p class="company-access-office-name">株式会社INDETAIL / 東京支店</p>
+						<p class="company-access-office-address">
+							〒108-0014 東京都港区芝5丁目29番20号<br />
+							クロスオフィス三田 
+						</p>
+						<p class="company-access-office-access">
+							JR田町駅から徒歩6分
+						</p>
+					</div>
+				</section>
+			</div>
+		</div>
+	</section>
+</div>
+
+<?php include($_SERVER["DOCUMENT_ROOT"]."/common/php/foot.php"); ?>

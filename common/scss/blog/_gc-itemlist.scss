@@ -1,0 +1,254 @@
+.item-list-header{
+	text-align: center;
+	padding: $base-size 0;
+  margin-top: $base-size * 2;
+	border-bottom: $border;
+  h3{
+    margin: 0;
+  }
+}
+.item-list-wrap {
+  background: $item-list-bg-color;
+  padding: ($base-size - $item-list-gutter-width / 2) $item-list-gutter-width / 2;
+}
+.item-list {
+  margin: 0 auto;
+  min-height: 300px;
+  opacity: 0;
+  max-width: 1280px;
+  transition-property: height;
+  transition-duration: 0.8s;
+  transition-timing-function: $ease-in-out;
+  img {
+    width: 100%;
+    max-width: 100%;
+  }
+  &.loaded{
+    opacity: 1;
+  }
+  &.rounded {
+    .item-wrap {
+      border-radius: $base-size/4;
+    }
+  }
+  &.gutter-10 {
+    .item {
+      padding: $base-size/4;
+    }
+  }
+  &.gutter-20 {
+    .item {
+      padding: $base-size/2;
+    }
+  }
+  &.opacity {
+    .item {
+      opacity: 1;
+    }
+  }
+}
+.item {
+  width: $col-3;
+  overflow: hidden;
+  padding: $item-list-gutter-width / 2;
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  display: block;
+  color: $item-title-color;
+  // animation: zoom-in 0.4s $ease;
+  transition-property: width height;
+  transition-duration: $item-list-animation-speed;
+  transition-timing-function: $ease;
+  // transition-delay: 0.2s;
+	&:hover{
+		color: $item-title-color-hover;
+	}
+  &.hide{
+    // animation: zoom-in 0.4s $ease;
+    transform: translateY(50px) scale(0.9);
+    opacity: 0;
+  }
+
+  &.animate{
+    transition-property: all;
+    transition-duration: $item-list-animation-speed;
+    transition-timing-function: $ease;
+    transition-delay: 0.1s;
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+
+  .item-wrap {
+    background: $item-bg-color;
+    box-shadow: $shadow;
+    overflow: hidden;
+		border-radius: $item-radius;
+  }
+  .item-img {
+    min-height: 100px;
+    position: relative;
+		background: $item-list-bg-color;
+
+    .featured {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 80px;
+      height: 80px;
+      border-top: solid 40px $item-label-bg;
+      border-left: solid 40px $item-label-bg;
+      border-right: solid 40px transparent;
+      border-bottom: solid 40px transparent;
+      > div {
+        transform: rotate(-45deg);
+        position: absolute;
+        text-align: center;
+        font-size: 10px;
+        line-height: 1.4em;
+        width: 80px;
+        height: 80px;
+        left: -35px;
+        top: -35px;
+        color: $item-label-text-color;
+        span {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+  .item-info {
+    padding: $item-padding;
+    position: relative;
+    font-size: 10px;
+    .user-name {
+      margin-bottom: $base-size * 0.25;
+			line-height: $base-size * 0.75;
+      color: $greyish;
+			max-width: 70%;
+      .icon.icon-s:before{
+        margin-left: 0;
+        vertical-align: -.15em;
+      }
+      span{
+        margin-right: $base-size / 2;
+      }
+    }
+    .user-img {
+      position: absolute;
+      right: $item-padding;
+      top: $item-author-img-size * -0.5;
+			@include circle($item-author-img-size);
+      overflow: hidden;
+      background: #fff;
+			background-size: cover;
+      border: solid 2px #fff;
+    }
+		h5{
+			margin-bottom: 0;
+			font-size: $item-title-size;
+		}
+  }
+}
+
+// 1カラムの場合
+.item-list.col-1 {
+  max-width: 640px;
+  .item {
+    width: 100%;
+    padding-bottom: $base-size;
+  }
+}
+
+// 2カラムの場合
+.item-list.col-2 {
+  .item {
+    width: 50%;
+  }
+  @media screen and (max-width: 768px) {
+    .item {
+      width: 100%;
+      padding-bottom: $base-size;
+    }
+  }
+}
+
+// 3カラムの場合(デフォルト) max-width:1280px
+@media screen and (max-width: 767px) {
+  .item {
+    width: $col-2;
+  }
+}
+@media screen and (max-width: 480px) {
+  .item {
+    width: 100%;
+    padding-bottom: $base-size;
+  }
+}
+
+// 4カラムの場合
+.item-list.col-4 {
+  max-width: 1440px;
+  .item {
+    width: $col-4;
+  }
+  @media screen and (max-width: 1120px) {
+    .item {
+      width: $col-3;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .item {
+      width: $col-2;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .item {
+      width: $col-1;
+      padding-bottom: $base-size;
+    }
+  }
+}
+
+// 5カラムの場合
+.item-list.col-5 {
+  max-width: 1440px;
+  .item {
+    width: $col-5;
+  }
+  @media screen and (max-width: 1120px) {
+    .item {
+      width: $col-4;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .item {
+      width: $col-3;
+    }
+  }
+  @media screen and (max-width: 640px) {
+    .item {
+      width: $col-2;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .item {
+      width: $col-1;
+      padding-bottom: $base-size;
+    }
+  }
+}
+
+// safariではtransitionを設定した場合,挙動に不具合があるため.itemのトランジションをオフ
+
+html.safari .item {
+  transition: none;
+  &.animate{
+    transition-property: all;
+    transition-duration: 0.4s;
+    transition-timing-function: $ease;
+    transition-delay: 0.2s;
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}

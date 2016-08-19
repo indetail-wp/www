@@ -1,0 +1,33 @@
+//
+// 円
+//
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+
+
+
+//
+// 擬似要素をディスプレイ
+//
+@mixin pseudo-elements-display() {
+  content: "";
+  display: inline-block;
+  position: absolute;
+}
+
+
+//
+// 輝度を判定してcolorを返す
+//
+@mixin luminance-contrast-color($rgb, $threshold: $luminance-threshold, $dark: $contrasted-dark-default, $light: $contrasted-light-default){
+  @if luminance($rgb) >= $threshold {
+    color: $dark;
+  }
+  @else {
+    color: $light;
+  }
+}

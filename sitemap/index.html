@@ -1,0 +1,23 @@
+<?php
+	$title = 'サイトマップ';
+	$description = '株式会社INDETAIL　サイトマップ。';
+	$cat = 'sitemap';
+	$page = 'index';
+?>
+<?php include($_SERVER["DOCUMENT_ROOT"]."/common/php/head.php"); ?>
+
+<main class="mod-mv">
+	<div class="mod-mv-in">
+		<p class="mod-mv-en">SITEMAP</p>
+		<h1 class="mod-mv-h">サイトマップ</h1>
+	</div>
+	<a href="#mod-mainContent" class="mod-mv-arrow"><img src="/common/img/base/arrow_b_wh.svg" height="22" alt=""></a>
+</main>
+
+<div class="mod-mainContent" id="mod-mainContent">
+	<div class="wrap-in sitemap-in">
+		<?php include($_SERVER["DOCUMENT_ROOT"]."/common/php/sitemap.php"); ?>
+	</div>
+</div>
+
+<?php include($_SERVER["DOCUMENT_ROOT"]."/common/php/foot.php"); ?>

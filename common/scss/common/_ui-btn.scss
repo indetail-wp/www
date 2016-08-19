@@ -1,0 +1,203 @@
+/*btn*/
+.btn {
+  background: $color;
+  color: #fff;
+  border-radius: $base-size * 0.75;
+  font-size: 14px;
+  line-height: $base-size * 1.5;
+  padding: 0 $base-size;
+  border: 0;
+  min-width: $base-size * 6;
+  transition: all .4s $ease;
+  cursor:pointer;
+
+  [class*=" icon-"]:before, [class^=icon-]:before{
+    vertical-align: -.3em;
+    margin-right: 6px;
+  }
+
+  &:hover{
+    background: $color-dark;
+    color: #fff;
+  }
+
+  &.full-width{
+    width: 100%;
+  }
+  &.width-auto{
+    width: auto!important;
+    min-width: 240px;
+  }
+  & .test{
+
+  }
+}
+
+.btn.disabled, .btn:disabled, fieldset[disabled] .btn {
+    background: $greyish;
+}
+.btn-alt.disabled, .btn-alt:disabled, fieldset[disabled] .btn-alt {
+    background: transparent;
+    color: $greyish;
+    border-color: $greyish;
+    &:hover{
+      color: $greyish;
+      background: transparent;
+    }
+}
+
+.btn-alt, .btn-ghost {
+  border: solid 1px $color;
+  line-height: ( $base-size * 1.5 ) - 2px;
+  outline: 0;
+  color: $color;
+  background: #fff;
+  box-shadow: none;
+
+  &:hover{
+    background: $color;
+    color: #fff;
+  }
+}
+
+.btn-radius-0, .btn-ghost{
+  border-radius: 0;
+}
+
+
+
+// .btn {
+//   // line-height: 30px;
+//   width: 100%;
+//   &.btn-save {
+//     background: $color;
+//   }
+//   &.btn-cancell {
+//     background: $greyish-lighter;
+//     color: $color-alt;
+//   }
+//   &.btn-save:hover {
+//     background: $color;
+//     transition: all 0.4s $ease;
+//   }
+//   &.btn-cancell:hover {
+//     background: $color-alt;
+//     color: white;
+//     transition: all 0.4s $ease;
+//   }
+// }
+// .submit div {
+//   display: table-cell;
+// }
+// .submit div.button {
+//   width: 50%;
+// }
+// .submit div.back {
+//   border: none;
+// }
+// .submit div.pass {
+//
+// }
+// .submit div.pass input {
+//   border: none;
+//   width: 100%;
+//   height: 50px;
+//   padding: 10px 65px;
+//   background: #f9f9f9;
+//   // border-radius: 0 0 0 5px;
+// }
+// .submit div.pass:after {
+//   content: "\e61c";
+//   width: 100px;
+//   height: 50px;
+//   position: absolute;
+//   top: 0;
+//   display: block;
+//   font-family: icomoon;
+//   /*ウェブフォント*/
+//   font-size: 18px;
+//   vertical-align: -3px;
+//   font-style: normal;
+//   line-height: 47px;
+//   color: #2d80a7;
+// }
+// .submit div.back a {
+//   width: 100%;
+//   display: block;
+//   text-align: center;
+//   line-height: 50px;
+//   background: #f9f9f9;
+//   border: none;
+// }
+// .submit div button {
+//   width: 100%;
+//   background: #2d80a7;
+//   color: #fff;
+//   border: none;
+//   line-height: 48px;
+// }
+// .submit div.back a:hover,
+// .submit div button:hover {
+//   background: #2b363c;
+//   color: #fff;
+//   text-decoration: none;
+// }
+//
+// /* 一覧内の追加・削除ボタン */
+// .list-button button.add {
+//   width: 100%;
+//   background: #2a6496;
+//   color: #fff;
+//   border: none;
+//   line-height: 30px;
+//   border-radius: 5px;
+// }
+// .list-button button.delete {
+//   width: 100%;
+//   background: #808080;
+//   color: #fff;
+//   border: none;
+//   line-height: 30px;
+//   border-radius: 5px;
+// }
+// .list-button button.add:hover,
+// button.delete:hover {
+//   background: #2b363c;
+//   color: #fff;
+//   text-decoration: none;
+// }
+// .btn-default:hover {
+//   border-color: #ccc;
+//   background: #2b363c;
+//   color: #fff;
+//   text-shadow: none;
+//   border: none;
+// }
+// .btn-default {
+//   background: #fff;
+//   border-color: #ccc;
+//   border-right: none;
+//   box-shadow: none;
+// }
+// .btn-group-justified a.btn-default {
+//   box-sizing: border-box;
+//   height: 34px;
+// }
+// .btn-group-justified a.btn-default:last-child {
+//   border-right: 1px solid #ccc;
+// }
+// .btn-default.active {
+//   background: #21a9e1;
+//   border: none;
+//   text-shadow: none;
+//   color: #fff;
+// }
+// .btn-group-justified .btn-default.active:after {
+//   content: '';
+//   position: absolute;
+//   top: 33px;
+//   border: 8px solid transparent;
+//   border-top: 8px solid #21a9e1;
+//   left: 50%;
+//   margin-left: -8px;
+// }

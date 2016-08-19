@@ -1,0 +1,105 @@
+<?php
+	$title = '';
+	$description = '';
+	$cat = 'contact';
+	$page = 'index';
+?>
+<?php include($_SERVER["DOCUMENT_ROOT"]."/common/php/head.php"); ?>
+
+<main class="mod-mv">
+	<div class="mod-mv-in">
+		<p class="mod-mv-en">CONTACT</p>
+		<h1 class="mod-mv-h">お問い合わせ</h1>
+	</div>
+	<a href="#mod-mainContent" class="mod-mv-arrow"><img src="/common/img/base/arrow_b_wh.svg" height="22" alt=""></a>
+</main>
+
+<div class="mod-mainContent" id="mod-mainContent">
+	<section class="">
+		<h2 class="mod-sec-h">ご相談・お見積無料</h2>
+		<div class="mod-sec-content">
+			<div class="wrap-in">
+				<p class="mod-form-txt">下記フォームに必要事項を入力し、どんな事でもお気軽にお問い合わせください。<br />お電話でのお問い合せはこちら TEL 011-206-9235</p>
+				<form id="mailForm" name="mailForm" action="mailSend.php" method="post">
+				<div class="mod-form-formWrap">
+					<div class="mod-form-table">
+						<div class="mod-form-table-col">
+							<dl>
+								<dt>
+									会社名（必須）※個人の場合は「個人」とご入力ください
+								</dt>
+								<dd>
+									<input type="text" id="corporate_name" name="corporate_name" class="mod-input-text " required />
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									お名前（必須）
+								</dt>
+								<dd>
+									<input type="text" id="name" name="name" class="mod-input-text "  required />
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									メールアドレス（必須）
+								</dt>
+								<dd>
+									<input type="text" id="mail" name="mail" class="mod-input-text"  required />
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									電話番号（必須）
+								</dt>
+								<dd>
+									<input type="text" id="phone" name="phone" pattern="^[0-9]+$" class="mod-input-text "  required />
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									どのようにして当社を知りましたか？
+								</dt>
+								<dd>
+									<input type="text" id="where" name="where" class="mod-input-text "  required />
+								</dd>
+							</dl>
+						</div>
+						<div class="mod-form-table-col">
+							<dl>
+								<dt>
+									お問い合わせ項目
+								</dt>
+								<dd>
+									<div class="mod-input-selectBoxWrap">
+										<select class="mod-input-select" id="radio" name="radio">
+											<option value="">お問い合わせ内容</option>
+											<option value="お見積">お見積（無料）</option>
+											<option value="採用について">採用について（随時募集中）</option>
+										</select>
+									</div>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									お問合せ内容（必須）
+								</dt>
+								<dd>
+									<textarea class="mod-input-textarea" name="opinion" id="opinion" required /></textarea>
+								</dd>
+							</dl>
+							<div class="mod-form-btns">
+								<input id="submit" type="submit" value="送信" class="mod-input-btn mod-btn01" onclick="formSend()" />
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+			</form>
+			</div>
+		</div>
+	</section>
+</div>
+
+<?php include($_SERVER["DOCUMENT_ROOT"]."/common/php/foot.php"); ?>
